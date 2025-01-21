@@ -3,7 +3,6 @@ import { v4 as uuidv4 } from "uuid";
 import { categories } from "../data/categories";
 import { ActivityActions, ActivityState } from "../reducers/activity-reducer";
 import { Activity } from "../types";
-import { Activity } from '../types/index';
 
 type FormProps = {
   dispatch: Dispatch<ActivityActions>;
@@ -66,7 +65,7 @@ const Form = ({ dispatch, state }: FormProps) => {
       onSubmit={handleSubmit}
     >
       <div className="grid grid-cols-1 gap-3">
-        <label htmlFor="category">Category:</label>
+        <label htmlFor="category"  className="font-bold">Category:</label>
         <select
           className="border border-slate300 p-2 rounded-lg w-full bg-white"
           id="category"
@@ -121,7 +120,7 @@ const Form = ({ dispatch, state }: FormProps) => {
           type="submit"
           className="bg-gray-800 hover:bg-gray-900 w-full p-2 font-bold uppercase text-white cursor-pointer disabled:opacity-10"
           value={
-            activity.category === 1 ? "Guardar Comida" : "Guardar Ejercicio"
+            activity.category === 1 ? "Save Food" : "Save Exercise"
           }
           disabled={!isValidActivity()}
         />
