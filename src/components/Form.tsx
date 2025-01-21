@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import { categories } from "../data/categories";
 import { ActivityActions, ActivityState } from "../reducers/activity-reducer";
 import { Activity } from "../types";
+import { Activity } from '../types/index';
 
 type FormProps = {
   dispatch: Dispatch<ActivityActions>;
@@ -65,7 +66,7 @@ const Form = ({ dispatch, state }: FormProps) => {
       onSubmit={handleSubmit}
     >
       <div className="grid grid-cols-1 gap-3">
-        <label htmlFor="category">Categoría:</label>
+        <label htmlFor="category">Category:</label>
         <select
           className="border border-slate300 p-2 rounded-lg w-full bg-white"
           id="category"
@@ -88,7 +89,7 @@ const Form = ({ dispatch, state }: FormProps) => {
           htmlFor="name"
           className="font-bold"
         >
-          Actividad:
+          Activity:
         </label>
         <input
           id="name"

@@ -10,11 +10,11 @@ type ActivityListProps = {
 };
 
 const ActivityList = ({ activities, dispatch }: ActivityListProps) => {
-  //
+  
   const categoryName = useMemo(
     () => (category: Activity["category"]) =>
       categories.map((cat) => (cat.id === category ? cat.name : "")),
-    [activities]
+    []
   );
 
   const isEmptyActivities = useMemo(
@@ -25,11 +25,11 @@ const ActivityList = ({ activities, dispatch }: ActivityListProps) => {
   return (
     <>
       <h2 className="text-4xl font-bold text-slate-600 text-center">
-        Actividades
+        Activities
       </h2>
 
       {isEmptyActivities ? (
-        <p className="text-center mt-1"> No hay actividades aún</p>
+        <p className="text-center mt-1">There are no activities yet</p>
       ) : (
         activities.map((activity) => (
           <div
@@ -46,7 +46,7 @@ const ActivityList = ({ activities, dispatch }: ActivityListProps) => {
               <p className="text-2xl font-bold pt-5">{activity.name}</p>
               <p className="font-black text-4xl text-lime-500">
                 {activity.calories} {""}
-                <span>Calorias</span>
+                <span>Calories</span>
               </p>
             </div>
 
